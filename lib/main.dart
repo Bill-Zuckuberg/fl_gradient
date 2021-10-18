@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
+import 'dart:math' show pi;
 
 void main() {
   runApp(const MaterialApp(
@@ -40,14 +41,35 @@ class MyApp extends StatelessWidget {
             height: 300,
             decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                gradient: RadialGradient(
-                    radius: 0.7, colors: [Colors.blue, Colors.red])),
+                gradient: RadialGradient(radius: 0.7, colors: [
+                  Colors.blue,
+                  Colors.red,
+                ])),
             child: const Text(
               "RadioGradient",
               textAlign: TextAlign.center,
             ),
           ),
-          const Divider()
+          const Divider(),
+          Container(
+            height: 300,
+            decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: SweepGradient(
+                    startAngle: pi / 6,
+                    endAngle: pi * 1.8,
+                    colors: [
+                      Colors.blue,
+                      Colors.green,
+                      Colors.yellow,
+                      Colors.red
+                    ])),
+            child: const Text(
+              "SweepGradient",
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const Divider(),
         ],
       ),
     );
